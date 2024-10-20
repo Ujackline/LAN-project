@@ -1,7 +1,7 @@
 
 % Values of K to simulate
 K_values = [1, 5, 15, 50, 100];
-p_values =0:0.01:0.99; % Probability values from 0 to 1
+p_values =0:0.01:0.99; % Probability values from 0 to 0.99
 num_iterations = 1000; % Number of iterations for simulation
 
 % Prepare storage for results
@@ -28,7 +28,7 @@ for i = 1:length(K_values)
     
     % Plot the results for this specific K
     figure;
-    semilogy(p_values, average_transmissions(i, :), 'o', 'MarkerSize', 5, 'DisplayName', sprintf('K = %d', K));
+    plot(p_values, average_transmissions(i, :), 'o', 'MarkerSize', 5, 'DisplayName', sprintf('K = %d', K));
     title(sprintf('Average Number of Transmissions for K = %d', K));
     xlabel('Probability of Failure (p)');
     ylabel('Average Transmissions (log scale)');
@@ -40,7 +40,7 @@ end
 figure;
 hold on;
 for i = 1:length(K_values)
-    semilogy(p_values, average_transmissions(i, :), 'o', 'MarkerSize', 5, 'DisplayName', sprintf('K = %d', K_values(i)));
+    plot(p_values, average_transmissions(i, :), 'o', 'MarkerSize', 5, 'DisplayName', sprintf('K = %d', K_values(i)));
 end
 title('Average Number of Transmissions for Different K Values');
 xlabel('Probability of Failure (p)');
