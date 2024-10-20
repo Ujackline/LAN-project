@@ -1,7 +1,7 @@
 
 % Values of K to simulate
 K_values = [1, 5, 15, 50, 100];
-p_values =0:0.01:0.99; % Probability values from 0 to 0.99
+p_values =0:0.01:0.99; % Probability values from 0 to 0.99 with incremet of 0.01
 num_iterations = 1000; % Number of iterations for simulation
 
 % Prepare storage for results

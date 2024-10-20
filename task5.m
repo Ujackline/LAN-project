@@ -31,7 +31,7 @@ for figIdx = 1:length(probability_sets)
             p3 = p_values(j);
             p1 = prob_set(1);
             p2 = prob_set(2);
-            avgTransmissionsPerP3(j) = runCustomCompoundNetworkSim2(K, p1, p2, p3, numIterations);
+            avgTransmissionsPerP3(j) = runCustomCompoundNetworkSim(K, p1, p2, p3, numIterations);
         end
         
         % Plot results for this K value

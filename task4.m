@@ -19,7 +19,7 @@ for i = 1:length(K_values)
     % Store results for later use in combined figure
     all_results{i} = avgTransmissionsPerP;
     
-    % Create individual figure for this K value
+       % Plot the results for this specific K
     figure;
     plot(p_values, avgTransmissionsPerP, 'o', 'MarkerFaceColor', 'none', 'MarkerEdgeColor', 'b'); % Hollow circles
     set(gca, 'YScale', 'log');  % Logarithmic y-scale
@@ -28,14 +28,14 @@ for i = 1:length(K_values)
     title(['Average Number of Transmissions for K = ' num2str(K)]);
 end
 
-% Combined figure for all K values
+% Combined figure for all K values 
+% Plot all results in a single figure
 figure;
 hold on;
 for i = 1:length(K_values)
     plot(p_values, all_results{i}, 'o-', 'MarkerFaceColor', 'none', 'DisplayName', ['K = ' num2str(K_values(i))]);
 end
 
-% Customize combined plot
 set(gca, 'YScale', 'log');  % Logarithmic y-scale
 xlabel('p (Probability of unsuccessful transmission)');
 ylabel('Average Number of Transmissions');
